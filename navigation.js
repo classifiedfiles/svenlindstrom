@@ -1,1 +1,0 @@
-// Reserved for future enhancements such as page transitions or active navigation states.
