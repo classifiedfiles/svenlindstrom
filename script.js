@@ -3,9 +3,6 @@
   const pages = [...document.querySelectorAll('[data-page]')];
   const openers = [...document.querySelectorAll('[data-open]')];
   const tabs = [...document.querySelectorAll('.tab')];
-  const menuButton = document.querySelector('.menu-btn');
-  const mobileMenu = document.querySelector('.mobile-menu');
-
   function showPage(id, updateHash = true) {
     const target = pages.find(page => page.dataset.page === id);
     if (!target) return;
@@ -22,9 +19,6 @@
       if (active) tab.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
     });
 
-    mobileMenu.hidden = true;
-    menuButton.setAttribute('aria-expanded','false');
-
     window.scrollTo({top:0, left:0, behavior:'auto'});
 
     if (updateHash) {
@@ -34,12 +28,6 @@
 
   openers.forEach(button => {
     button.addEventListener('click', () => showPage(button.dataset.open));
-  });
-
-  menuButton.addEventListener('click', () => {
-    const willOpen = mobileMenu.hidden;
-    mobileMenu.hidden = !willOpen;
-    menuButton.setAttribute('aria-expanded', String(willOpen));
   });
 
   window.addEventListener('hashchange', () => {
