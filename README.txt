@@ -1,1 +1,0 @@
-SVEN LINDSTRÖM — 1.0
