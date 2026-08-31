@@ -51,7 +51,7 @@
     const dy = e.changedTouches[0].clientY - touchStartY;
 
     if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.4) {
-      const order = ['home','profile','story','military','links','rules'];
+      const order = ['home','profile','story','military','rules'];
       const current = pages.find(page => !page.hidden)?.dataset.page || 'home';
       const index = order.indexOf(current);
       const nextIndex = dx < 0 ? index + 1 : index - 1;

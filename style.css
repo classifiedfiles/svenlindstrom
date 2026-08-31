@@ -7,7 +7,7 @@
   --muted:#92999d;
   --faint:#687075;
   --line:#2a3034;
-  --max:760px;
+  --max:430px;
 }
 *{box-sizing:border-box}
 html{background:var(--bg);scroll-behavior:smooth}
@@ -18,7 +18,7 @@ body{
   background:
     radial-gradient(circle at 50% -10%,rgba(255,255,255,.04),transparent 35%),
     var(--bg);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-family:"Manrope","Avenir Next","Helvetica Neue",Arial,sans-serif;
 }
 button{font:inherit}
 img{display:block;width:100%}
@@ -142,8 +142,9 @@ h3{
 .signature{
   margin:28px 0 22px;
   color:#d9dbd8;
-  font-family:Georgia,serif;
-  font-style:italic;
+  font-family:"Manrope","Avenir Next","Helvetica Neue",Arial,sans-serif;
+  font-style:normal;
+  font-weight:300;
   font-size:1rem;
   line-height:1.55;
 }
@@ -179,8 +180,8 @@ h3{
 .body-copy p{
   margin:0 0 16px;
   color:#cfd2d0;
-  font-family:Georgia,serif;
-  font-size:.93rem;
+  font-family:"Manrope","Avenir Next","Helvetica Neue",Arial,sans-serif;
+  font-size:.89rem;
   line-height:1.72;
 }
 .facts-grid{
@@ -278,28 +279,79 @@ h3{
   from{opacity:0;transform:translateY(3px)}
   to{opacity:1;transform:translateY(0)}
 }
-@media(min-width:700px){
-  body{padding:30px 0}
+
+/* Le mobile est la référence visuelle, y compris sur ordinateur. */
+.app{
+  width:min(var(--max),100%);
+}
+h1{
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+h2{
+  font-weight:500;
+  letter-spacing:-.025em;
+}
+h3{
+  font-weight:500;
+  letter-spacing:.045em;
+}
+.hero-copy,
+.section-head,
+.body-copy,
+.page-nav{
+  width:100%;
+}
+.body-copy p{
+  font-weight:300;
+  letter-spacing:.005em;
+}
+.signature{
+  font-size:.92rem;
+  letter-spacing:.005em;
+}
+.tab,
+.page-nav button,
+.cta{
+  font-weight:500;
+}
+@media(min-width:431px){
+  body{
+    padding:26px 0;
+  }
   .app{
-    width:min(620px,92vw);
+    width:430px;
     min-height:auto;
     border:1px solid var(--line);
-    box-shadow:0 40px 120px rgba(0,0,0,.4);
+    box-shadow:0 34px 100px rgba(0,0,0,.38);
   }
-  .topbar{position:relative;top:auto}
-  .tabs{position:relative;top:auto}
-  .hero-card{min-height:auto}
+  .topbar{
+    position:sticky;
+    top:0;
+  }
+  .tabs{
+    position:sticky;
+    top:58px;
+  }
+  .hero-card{
+    min-height:calc(100vh - 104px);
+  }
   .hero-image{
-    height:auto;
-    min-height:0;
-    max-height:none;
-    aspect-ratio:16/9;
+    height:54vh;
+    min-height:360px;
+    max-height:520px;
+    aspect-ratio:auto;
   }
   .hero-copy{
-    padding:30px 26px 34px;
-    text-align:left;
+    padding:26px 22px 30px;
   }
-  .section-head{padding:30px 26px 20px}
-  .body-copy{padding:24px 26px 30px}
-  .page-nav{padding:16px 26px 24px}
+  .section-head{
+    padding:28px 20px 18px;
+  }
+  .body-copy{
+    padding:22px 20px 26px;
+  }
+  .page-nav{
+    padding:16px 20px 22px;
+  }
 }
